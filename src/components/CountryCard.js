@@ -1,5 +1,10 @@
-const CountryCard = ({flag, name, population, region, capital}) => (
-  <div className="relative drop-shadow-lg flex flex-col justify center h-full">
+import {Link} from 'react-router-dom'
+
+const CountryCard = ({code, flag, name, population, region, capital}) => (
+  <Link
+    to={`/country/${code}`}
+    className="relative drop-shadow-lg flex flex-col justify center h-full"
+  >
     <img
       variant="top"
       src={flag}
@@ -7,7 +12,7 @@ const CountryCard = ({flag, name, population, region, capital}) => (
       alt={`flag of ${name}`}
     />
     <div className="bg-white flex flex-col flex-1 p-5 rounded-b-md">
-      <h1 className="font-extrabold text-xl">{name}</h1>
+      <h1 className="font-extrabold text-xl mb-2">{name}</h1>
       <div className="normal-nums">
         <span className="font-semibold mr-1">Population:</span>
         {population.toLocaleString()}
@@ -21,7 +26,7 @@ const CountryCard = ({flag, name, population, region, capital}) => (
         {capital || '-'}
       </div>
     </div>
-  </div>
+  </Link>
 )
 
 export default CountryCard

@@ -15,6 +15,7 @@ const Home = () => {
         {data &&
           sortByName(data).map((item, i) => (
             <CountryCard
+              code={item.cca3}
               flag={item.flags.png}
               name={item.name.common}
               population={item.population}
