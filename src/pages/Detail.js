@@ -78,7 +78,11 @@ const Detail = () => {
                   {detailData.languages
                     ? Object.values(detailData.languages)
                         .sort()
-                        .map((item) => `${item}`)
+                        .map((item, i) =>
+                          i + 1 === Object.values(detailData.languages).length
+                            ? `${item}`
+                            : `${item}, `,
+                        )
                     : '-'}
                 </p>
               </div>
