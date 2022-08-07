@@ -1,19 +1,36 @@
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import {CountryContext} from '../App'
 import CountryCard from '../components/CountryCard'
+import Search from '../components/Search'
 
 const Home = () => {
+  const [text, setText] = useState('')
   const data = useContext(CountryContext)
 
   function sortByName(data) {
     return data.sort((a, b) => (a.name.common > b.name.common ? 1 : -1))
   }
 
+  function handleInput(value) {
+    setText(value)
+  }
+
+  function filterData(data, text) {
+    return text.length > 0
+      ? data.filter((item) =>
+          item.name.common.toLowerCase().includes(text.toLowerCase()),
+        )
+      : data
+  }
+
   return (
     <>
+      <div className="flex justify-start md:justify-between gap-y-6 my-1">
+        <Search handleInput={handleInput} text={text} />
+      </div>
       <main className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mx-5 mt-9 text-sm">
         {data &&
-          sortByName(data).map((item, i) => (
+          sortByName(filterData(data, text)).map((item, i) => (
             <CountryCard
               code={item.cca3}
               flag={item.flags.png}
