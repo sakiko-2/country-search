@@ -1,5 +1,7 @@
 {
   "name": "country-search",
+  "title": "Country Search",
+  "author": "sakiko-2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
