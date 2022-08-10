@@ -1,6 +1,6 @@
 import {createContext} from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import useFetch from './hooks/useFetch'
+import {useFetch} from './hooks/useFetch'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
