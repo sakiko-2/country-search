@@ -6,13 +6,13 @@ const Navbar = () => {
   const [dark, setDark] = useDarkMode()
 
   return (
-    <nav className="shadow-md bg-white dark:bg-[color:var(--dark-blue)] dark:shadow-black">
-      <div className="container flex items-center justify-between md:mx-auto px-3 py-5">
+    <nav className="bg-white shadow-md dark:bg-[color:var(--dark-blue)] dark:shadow-black">
+      <div className="container flex items-center justify-between px-3 py-5 md:mx-auto">
         <Link to="/" className="font-extrabold">
           Where in the world?
         </Link>
         <div
-          className="flex jusify-between items-center cursor-pointer"
+          className="jusify-between flex cursor-pointer items-center"
           onClick={() => setDark(!dark)}
         >
           <MoonIcon className="mr-2 h-5 w-5" />

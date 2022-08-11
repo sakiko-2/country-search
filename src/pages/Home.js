@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex justify-start md:justify-between flex-wrap md:flex-nowrap gap-y-8 my-3">
+      <div className="my-3 flex flex-wrap justify-start gap-y-8 md:flex-nowrap md:justify-between">
         <Search handleInput={handleInput} text={text} />
         <Dropdown
           options={getRegions(data)}
@@ -48,7 +48,7 @@ const Home = () => {
           region={region}
         />
       </div>
-      <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mx-5 mt-9 text-sm">
+      <div className="relative mx-5 mt-9 grid grid-cols-1 gap-10 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data &&
           sortByName(filterData(filterRegions(data, region), text)).map(
             (item, i) => (

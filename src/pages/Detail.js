@@ -20,22 +20,22 @@ const Detail = () => {
       </div>
 
       {detailData && (
-        <main className="flex-1 grid grid-cols-1 lg:grid-cols-2">
+        <main className="grid flex-1 grid-cols-1 lg:grid-cols-2">
           <div className="lg:mr-5">
             <img
               src={detailData.flags.svg}
-              className="shadow-lg max-h-[70vh]"
+              className="max-h-[70vh] shadow-lg"
               alt="flag"
             />
           </div>
           <div className="flex flex-col items-start px-6 py-5">
-            <h1 className="font-extrabold text-3xl my-4">
+            <h1 className="my-4 text-3xl font-extrabold">
               {detailData.name.common}
             </h1>
             <div className="flex w-full flex-wrap text-base md:mb-10">
-              <div className="w-full md:w-1/2 pr-3 my-2">
+              <div className="my-2 w-full pr-3 md:w-1/2">
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Native Name:</span>
+                  <span className="mr-1 font-semibold">Native Name:</span>
                   {detailData.name.nativeName
                     ? Object.values(detailData.name.nativeName).map(
                         (item) => `${item.official}, `,
@@ -43,30 +43,30 @@ const Detail = () => {
                     : '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Population:</span>
+                  <span className="mr-1 font-semibold">Population:</span>
                   {detailData.population.toLocaleString() || '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Region:</span>
+                  <span className="mr-1 font-semibold">Region:</span>
                   {detailData.region || '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Sub Region:</span>
+                  <span className="mr-1 font-semibold">Sub Region:</span>
                   {detailData.subregion || '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Capital:</span>
+                  <span className="mr-1 font-semibold">Capital:</span>
                   {detailData.capital || '-'}
                 </p>
               </div>
 
-              <div className="w-full md:w-1/2 my-3 md:my-2">
+              <div className="my-3 w-full md:my-2 md:w-1/2">
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Top Level Domain:</span>
+                  <span className="mr-1 font-semibold">Top Level Domain:</span>
                   {detailData.tld || '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Currencies:</span>
+                  <span className="mr-1 font-semibold">Currencies:</span>
                   {detailData.currencies
                     ? Object.values(detailData.currencies).map(
                         (item) => item.name,
@@ -74,7 +74,7 @@ const Detail = () => {
                     : '-'}
                 </p>
                 <p className="leading-loose">
-                  <span className="font-semibold mr-1">Languages:</span>
+                  <span className="mr-1 font-semibold">Languages:</span>
                   {detailData.languages
                     ? Object.values(detailData.languages)
                         .sort()
@@ -88,7 +88,7 @@ const Detail = () => {
               </div>
             </div>
             <div className="my-3">
-              <span className="leading-relaxed font-semibold mr-2 block md:inline-block">
+              <span className="mr-2 block font-semibold leading-relaxed md:inline-block">
                 Border Countries:
               </span>
               {detailData.borders
