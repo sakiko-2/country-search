@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <main>
-      <div className="flex justify-start md:justify-between flex-wrap md:flex-nowrap gap-y-8 mb-3">
+      <div className="flex justify-start md:justify-between flex-wrap md:flex-nowrap gap-y-8 my-3">
         <Search handleInput={handleInput} text={text} />
         <Dropdown
           options={getRegions(data)}

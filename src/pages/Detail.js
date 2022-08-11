@@ -28,12 +28,12 @@ const Detail = () => {
               alt="flag"
             />
           </div>
-          <div className="grid content-between px-6 py-5">
+          <div className="flex flex-col items-start px-6 py-5">
             <h1 className="font-extrabold text-3xl my-4">
               {detailData.name.common}
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 text-base">
-              <div className="pr-2 my-2">
+            <div className="flex w-full flex-wrap text-base md:mb-10">
+              <div className="w-full md:w-1/2 pr-3 my-2">
                 <p className="leading-loose">
                   <span className="font-semibold mr-1">Native Name:</span>
                   {detailData.name.nativeName
@@ -60,7 +60,7 @@ const Detail = () => {
                 </p>
               </div>
 
-              <div className="my-3 md:my-2">
+              <div className="w-full md:w-1/2 my-3 md:my-2">
                 <p className="leading-loose">
                   <span className="font-semibold mr-1">Top Level Domain:</span>
                   {detailData.tld || '-'}
