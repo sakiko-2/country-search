@@ -13,6 +13,14 @@ const Detail = () => {
     return data.find((item) => item.cca3 === code).name.common
   }
 
+  function formatArray(arr) {
+    return [
+      ...new Set(
+        arr.map((item, i) => (i + 1 === arr.length ? `${item}` : `${item}, `)),
+      ),
+    ]
+  }
+
   return (
     <>
       <div className="mb-6">
@@ -37,9 +45,17 @@ const Detail = () => {
                 <p className="leading-loose">
                   <span className="mr-1 font-semibold">Native Name:</span>
                   {detailData.name.nativeName
-                    ? Object.values(detailData.name.nativeName).map(
-                        (item) => `${item.official}, `,
-                      )
+                    ? [
+                        ...new Set(
+                          Object.values(detailData.name.nativeName).map(
+                            (item, i) =>
+                              i + 1 ===
+                              Object.values(detailData.name.nativeName).length
+                                ? `${item.official}`
+                                : `${item.official}, `,
+                          ),
+                        ),
+                      ]
                     : '-'}
                 </p>
                 <p className="leading-loose">
@@ -76,13 +92,7 @@ const Detail = () => {
                 <p className="leading-loose">
                   <span className="mr-1 font-semibold">Languages:</span>
                   {detailData.languages
-                    ? Object.values(detailData.languages)
-                        .sort()
-                        .map((item, i) =>
-                          i + 1 === Object.values(detailData.languages).length
-                            ? `${item}`
-                            : `${item}, `,
-                        )
+                    ? formatArray(Object.values(detailData.languages).sort())
                     : '-'}
                 </p>
               </div>
