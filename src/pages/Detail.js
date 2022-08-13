@@ -16,9 +16,14 @@ const Detail = () => {
   function formatArray(arr) {
     return [
       ...new Set(
-        arr.map((item, i) => (i + 1 === arr.length ? `${item}` : `${item}, `)),
+        arr.map((item, i) => (i + 1 === arr.length ? item : `${item}, `)),
       ),
     ]
+  }
+
+  function formatNativeName(arr) {
+    let uniq = [...new Set(Object.values(arr).map((item) => item.official))]
+    return uniq.map((item, i) => (uniq.length - 1 !== i ? `${item}, ` : item))
   }
 
   return (
@@ -45,17 +50,7 @@ const Detail = () => {
                 <p className="leading-loose">
                   <span className="mr-1 font-semibold">Native Name:</span>
                   {detailData.name.nativeName
-                    ? [
-                        ...new Set(
-                          Object.values(detailData.name.nativeName).map(
-                            (item, i) =>
-                              i + 1 ===
-                              Object.values(detailData.name.nativeName).length
-                                ? `${item.official}`
-                                : `${item.official}, `,
-                          ),
-                        ),
-                      ]
+                    ? formatNativeName(detailData.name.nativeName)
                     : '-'}
                 </p>
                 <p className="leading-loose">
