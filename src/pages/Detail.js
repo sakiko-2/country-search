@@ -28,20 +28,20 @@ const Detail = () => {
 
   return (
     <>
-      <div className="mb-6">
+      <div className="mx-3 mb-6 sm:mx-0">
         <BackButton />
       </div>
 
       {detailData && (
         <main className="grid flex-1 grid-cols-1 lg:grid-cols-2">
-          <div className="lg:mr-5">
+          <div className="mx-3 sm:mx-0 lg:mr-5">
             <img
               src={detailData.flags.svg}
               className="max-h-[70vh] shadow-lg"
               alt="flag"
             />
           </div>
-          <div className="flex flex-col items-start px-6 py-5">
+          <div className="flex flex-col items-start px-3 py-5 sm:px-6">
             <h1 className="my-4 text-3xl font-extrabold">
               {detailData.name.common}
             </h1>
