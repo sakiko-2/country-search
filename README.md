@@ -1,5 +1,20 @@
 # Country Search App
 
+## Screenshots
+
+<div>
+  <h3>Desktop</h3>
+  <img src="./screenshots/home-light.png" width="700" alt="desktop home page light mode screenshot">
+  <img src="./screenshots/detail-dark.png" width="700" alt="desktop detail page dark mode screenshot">
+</div>
+<br/>
+<div>
+  <h3>Mobile</h3>
+  <img src="./screenshots/home-light-mobile.png" width="250" alt="mobile home page light mode screenshot">
+  <img src="./screenshots/detail-dark-mobile.png" width="250" alt="mobile detail page dark mode screenshot">
+</div>
+<br />
+
 ## Built with
 
 - [Create React App](https://github.com/facebook/create-react-app) - CLI tool to
