@@ -8,10 +8,10 @@ const CountryCard = ({code, flag, name, population, region, capital}) => (
     <img
       variant="top"
       src={flag}
-      className="overflow-hidden rounded-t-md border border-b-gray-300 dark:border-[color:var(--dark-blue)]"
+      className="overflow-hidden rounded-t-md border border-b-gray-300 dark:border-[color:var(--dark-primary-color)]"
       alt={`flag of ${name}`}
     />
-    <div className="flex flex-1 flex-col rounded-b-md bg-white p-5 dark:bg-[color:var(--dark-blue)]">
+    <div className="flex flex-1 flex-col rounded-b-md bg-[color:var(--light-primary-color)] p-5 dark:bg-[color:var(--dark-primary-color)]">
       <h1 className="mb-2 text-xl font-extrabold">{name}</h1>
       <div className="normal-nums">
         <span className="mr-1 font-semibold">Population:</span>

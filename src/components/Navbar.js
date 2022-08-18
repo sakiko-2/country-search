@@ -6,7 +6,7 @@ const Navbar = () => {
   const [dark, setDark] = useDarkMode()
 
   return (
-    <nav className="bg-white shadow-md dark:bg-[color:var(--dark-blue)] dark:shadow-black">
+    <nav className="bg-[color:var(--light-primary-color)] shadow-md dark:bg-[color:var(--dark-primary-color)] dark:shadow-black">
       <div className="container flex items-center justify-between px-3 py-5 md:mx-auto">
         <Link to="/" className="font-extrabold">
           Where in the world?
