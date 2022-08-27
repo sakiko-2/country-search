@@ -18,5 +18,9 @@ export function useDarkMode() {
     // eslint-disable-next-line
   }, [localStorage.theme])
 
-  return [dark, setDark]
+  function toggle() {
+    return setDark((dark) => !dark)
+  }
+
+  return {dark, toggle}
 }

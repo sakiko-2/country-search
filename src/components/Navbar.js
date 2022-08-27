@@ -3,7 +3,7 @@ import {MoonIcon} from '@heroicons/react/outline'
 import {useDarkMode} from '../hooks/useDarkMode'
 
 const Navbar = () => {
-  const [dark, setDark] = useDarkMode()
+  const {dark, toggle} = useDarkMode()
 
   return (
     <nav className="bg-[color:var(--light-primary-color)] shadow-md dark:bg-[color:var(--dark-primary-color)] dark:shadow-black">
@@ -13,7 +13,7 @@ const Navbar = () => {
         </Link>
         <button
           className="jusify-between flex items-center rounded p-1"
-          onClick={() => setDark(!dark)}
+          onClick={toggle}
         >
           <MoonIcon className="mr-2 h-5 w-5" />
           <span>Dark Mode</span>
